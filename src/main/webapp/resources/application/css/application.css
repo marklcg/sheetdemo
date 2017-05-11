@@ -1,0 +1,50 @@
+body {
+	font-size: 12px;
+}
+
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 1em;
+}
+
+.center-col {
+	text-align: center;
+}
+
+.header { 
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 2em;
+    font-family: sans-serif;
+}
+
+.footer {
+    padding: 8px;
+    background: #095AA6;
+	height: 20px; 
+	overflow: hidden;
+	clear: both;
+	display: block; 
+}
+
+.footer p {
+    margin: 0px;
+    padding: 2px;
+}
+
+.titlebar {
+	margin-bottom: 8px;
+}
+
+#content {
+    margin: 8px 8px 8px 8px;
+    height: 100%;
+}
+
+.ui-growl {
+	top: 60px;
+}
+
+.handsontable .ui-state-active {
+    background: #CDF;
+}
+

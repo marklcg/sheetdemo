@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <f:facet name="first">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="description" content="#{appmsg['label.application.description']}"/>
+        <meta name="author" content="#{appmsg['label.application.author']}"/>
+    </f:facet>
+    <title>#{appmsg['label.application.title']}: #{pageTitle}</title>
+</h:head>
+<h:body>
+    <h:outputStylesheet library="application" name="css/application.css"/>
+    <p:growl id="growl" showDetail="true" life="6000" globalOnly="true"/>
+
+    <div class="header">
+        <ui:insert name="header">
+            <div class="ui-grid ui-grid-responsive">
+                <div class="ui-grid-row branding">
+                    <div class="ui-grid-col-6">
+                        <span class="title">#{appmsg['label.application.title']}</span>
+                    </div>
+                </div>
+            </div>
+        </ui:insert>
+    </div>
+    <div class="content ui-grid ui-grid-responsive">
+       <ui:insert name="content">
+           <div class="ui-grid-row">
+               <div class="ui-grid-col-12">
+                   <h1>Empty Page</h1>
+               </div>
+           </div>
+       </ui:insert>
+    </div>
+    <div class="clearall" />
+</h:body>
+</html>

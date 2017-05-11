@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+.idea/
+.metadata/
+.recommenders/
+*.iml
+target/
+test-output/
+*.faces-config.xml.jsfdia
+.tern-project
+*.bak
