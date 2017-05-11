@@ -6,7 +6,7 @@
 
     <!-- Project information -->
     <groupId>com.lassitercg</groupId>
-    <artifactId>jsfdemo</artifactId>
+    <artifactId>sheetdemo</artifactId>
     <name>jsfdemo</name>
     <version>1.2-SNAPSHOT</version>
     <description>Showcase JSF Components</description>

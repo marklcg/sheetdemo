@@ -14,10 +14,12 @@ import javax.inject.Named;
 import com.lcg.jsfdemo.manager.AssetManager;
 import com.lcg.jsfdemo.model.Asset;
 
+/**
+ * Simple producer object that produces a list of Assets. This is application scoped which would normally be bad
+ * with multiple clients/etc but works for demo.
+ */
 @ApplicationScoped
 public class AssetProducer implements Serializable {
-
-	private static final long serialVersionUID = 1L;
 
 	@Inject
 	AssetManager manager;
@@ -25,12 +27,12 @@ public class AssetProducer implements Serializable {
 	private List<Asset> assets;
 
 	@PostConstruct
+	void init() {
+		manager.initTestData();
+	}
+
 	void refresh() {
 		assets = manager.listAll();
-		if (assets.isEmpty()) {
-			manager.initTestData();
-			assets = manager.listAll();
-		}
 	}
 
 	@Produces

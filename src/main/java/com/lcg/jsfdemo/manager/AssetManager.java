@@ -1,5 +1,6 @@
 package com.lcg.jsfdemo.manager;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -15,8 +16,12 @@ import com.lcg.jsfdemo.model.AssetType;
 import com.lcg.jsfdemo.model.PlatformArchType;
 import com.lcg.jsfdemo.model.PlatformType;
 
+/**
+ * A simple DAO/Repository/Manager pattern for managing persistent of our imaginary entity.  Includes garbage code
+ * to initialize some test data.
+ */
 @Stateless
-public class AssetManager {
+public class AssetManager implements Serializable {
 
 	@Inject
 	EntityManager em;
@@ -32,17 +37,6 @@ public class AssetManager {
 		em.persist(asset);
 	}
 
-	protected void addAssets(int count, PlatformType platform, PlatformArchType arch, AssetType type) {
-		for (int i = 0; i < count; i++) {
-			Asset asset = new Asset();
-			asset.setPlatform(platform);
-			asset.setPlatformArch(arch);
-			asset.setHostName(type.toString().toLowerCase() + i + ".example.lan");
-			asset.setAssetType(type);
-			asset.setLastUpdated(new Date());
-			persist(asset);
-		}
-	}
 
 	@TransactionAttribute(TransactionAttributeType.REQUIRED)
 	public void initTestData() {
@@ -59,4 +53,15 @@ public class AssetManager {
 		return em.merge(asset);
 	}
 
+	protected void addAssets(int count, PlatformType platform, PlatformArchType arch, AssetType type) {
+		for (int i = 0; i < count; i++) {
+			Asset asset = new Asset();
+			asset.setPlatform(platform);
+			asset.setPlatformArch(arch);
+			asset.setHostName(type.toString().toLowerCase() + i + ".example.lan");
+			asset.setAssetType(type);
+			asset.setLastUpdated(new Date());
+			persist(asset);
+		}
+	}
 }
